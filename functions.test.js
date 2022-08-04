@@ -50,6 +50,9 @@ test('Admin should be in usernames', () => {
 });
 
 // Working with async data
+
+// Promise
+// async data needs expect.assertions
 test('User fetched name should be Leanne Graham', () => {
 	expect.assertions(1);
 	return functions.fetchUser().then(data => {
@@ -57,6 +60,13 @@ test('User fetched name should be Leanne Graham', () => {
 	});
 });
 
+// Async Await
+test('User fetched name should be Leanne Graham', async () => {
+	expect.assertions(1);
+	const data = await functions.fetchUser();
+	expect(data.name).toEqual('Leanne Graham');
+
+});
 
 
 
